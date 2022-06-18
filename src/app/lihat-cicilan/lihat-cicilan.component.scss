@@ -1,4 +1,5 @@
-.main{
+$borderRadius: .2em;
+.main {
     display: flex;
     flex-direction: column;
     background-color: #DFF6FF;
@@ -6,58 +7,57 @@
     height: 92.5vh;
 }
 
-h1{
+.title {
     text-align: center;
 }
 
-col{
+col {
     border: 2px solid #06283D;
-    
 }
 
-.row{
+.row {
     display: flex;
     justify-content: space-evenly;
     padding-top: 50px;
 }
 
-.subdiv{
+.subdiv {
     display: flex;
     justify-content: space-evenly;
 }
 
-.subdiv #left{
-    border-radius: 0% 0% 0px .1em;
+.subdiv #left {
+    border-radius: 0% 0% 0px $borderRadius;
     border-top: 0px;
     border-left: 2px solid #06283D;
     border-bottom: 2px solid #06283D;
     border-right: 2px solid #06283D;
 }
 
-.subdiv #right{
-    border-radius: 0% 0% .1em 0px;
+.subdiv #right {
+    border-radius: 0% 0% $borderRadius 0px;
     border-top: 0px;
     border-left: 0px;
     border-bottom: 2px solid #06283D;
     border-right: 2px solid #06283D;
 }
 
-
-h4{
-    color: whitesmoke;
-    background-color: #1363DF;
+h4 {
+    color: #06283D;
+    font-weight: bolder;
+    background-color: transparent;
     text-align: center;
     border: 2px solid #06283D;
-    border-radius: .1em .1em 0% 0%;
+    border-radius: $borderRadius $borderRadius 0% 0%;
     margin: 0px;
     padding: 5px 0px;
 }
 
-h5{
+h5 {
     color: #06283D;
     text-align: center;
     border: 2px solid #06283D;
-    border-radius: 0% 0% .1em .1em;
+    border-radius: 0% 0% $borderRadius $borderRadius;
     width: 100%;
     border-top: 0px;
     padding: 7px 0px;

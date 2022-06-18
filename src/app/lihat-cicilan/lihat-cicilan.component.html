@@ -12,24 +12,42 @@
     </div>
 </div> -->
 <div class="main">
-    <h1><b>Cicilan Anda</b></h1>
+    <h2 class="title"><b>Cicilan Anda</b></h2>
     <div class="container">
         <div class="row">
-          <div class="col">
-            <h4>Total Kewajiban per Bulan</h4>
-            <h5><b>Rp3,520,000</b></h5>
-          </div>
-          <div class="col">
-            <h4>Besar Pembayaran Selanjutnya</h4>
-            <div class="subdiv">
-                <h5 id="left"><b>16 September 2022</b></h5>
-                <h5 id="right"><b>Rp20,520,000</b></h5>
+            <div class="col">
+                <h4>Total Kewajiban per Bulan</h4>
+                <h5><b>Rp. {{(TotalKewajiban).toLocaleString('en-us', {minimumFractionDigits: 2})}}</b></h5>
             </div>
-          </div>
-          <div class="col">
-            <h4>Yang Sudah Terkumpul</h4>
-            <h5><b>SEMUA</b></h5>
-          </div>
+            <div class="col">
+                <h4>Besar Pembayaran Selanjutnya</h4>
+                <div class="subdiv">
+                    <h5 id="left"><b>16 September 2022</b></h5>
+                    <h5 id="right"><b>Rp20,520,000</b></h5>
+                </div>
+            </div>
+            <div class="col">
+                <h4>Yang Sudah Terkumpul</h4>
+                <h5><b>SEMUA</b></h5>
+            </div>
         </div>
+    </div>
+    <div class="container">
+        <Table>
+            <tr>
+                <th *ngFor="let header of Headers">{{header}}</th>
+            </tr>
+            <tr *ngFor="let item of CicilanDummy">
+                <td>
+                    {{item.NamaCicilan}}
+                </td>
+                <td>
+                    Rp. {{(item.Jumlah).toLocaleString('en-us', {minimumFractionDigits: 2})}}
+                </td>
+                <td>
+                    {{item.SisaCicilan}}
+                </td>
+            </tr>
+        </Table>
     </div>
 </div>

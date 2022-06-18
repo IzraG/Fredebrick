@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'fredebrick';
   main_menu: boolean= false;
   lihat_cicilan: boolean = true;
+  cicilanBaru: boolean = true;
 }
 
 const Employmentsample: financialdatamodel =
