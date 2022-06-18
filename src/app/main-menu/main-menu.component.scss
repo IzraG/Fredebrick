@@ -1,0 +1,31 @@
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(246, 216, 147);
+}
+
+.main{
+    padding-top: 300px;
+    padding-bottom: 327px;
+    background-color: #DFF6FF;
+}
+
+h1{
+    color: #1363DF;
+}
+
+h3{
+    color: #47B5FF;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+}
+
+.menu a{
+    background-color: #DFF6FF;
+    border: 2px solid #06283D;
+    margin: 50px 80px;
+}
