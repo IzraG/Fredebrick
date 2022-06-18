@@ -6,6 +6,7 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LihatCicilanComponent } from './lihat-cicilan/lihat-cicilan.component';
 import { CicilanbaruComponent } from './cicilanbaru/cicilanbaru.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,10 +15,12 @@ import { CicilanbaruComponent } from './cicilanbaru/cicilanbaru.component';
     MainMenuComponent,
     NavbarComponent,
     LihatCicilanComponent,
-    CicilanbaruComponent
+    CicilanbaruComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
