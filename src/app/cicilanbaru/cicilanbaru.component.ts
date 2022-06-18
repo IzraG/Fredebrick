@@ -10,6 +10,7 @@ export class CicilanbaruComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

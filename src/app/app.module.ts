@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';import { AppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -18,7 +18,6 @@ import { CicilanbaruComponent } from './cicilanbaru/cicilanbaru.component';
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule
   ],
   providers: [],
   bootstrap: [AppComponent]
