@@ -6,17 +6,22 @@
 }
 
 .main{
-    padding-top: 300px;
-    padding-bottom: 327px;
+    // padding-top: 330px;
+    // padding-bottom: 350px;
+    height: 92.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #DFF6FF;
 }
 
 h1{
-    color: #1363DF;
+    // color: #06283D;
+    color: #47B5FF;
 }
 
-h3{
-    color: #47B5FF;
+.title h3{
+    color: #1363DF;
 }
 
 .menu{
@@ -24,9 +29,9 @@ h3{
     justify-content: center;
 }
 
-.menu a{
-    background-color: #DFF6FF;
-    border: 2px solid #06283D;
-    margin: 50px 80px;
-    color: #06283D;
+.menu button{
+    // background-color: #DFF6FF;
+    // border: 2px solid #06283D;
+    margin: 30px 50px;
+    // color: #06283D;
 }
