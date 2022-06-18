@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LihatCicilanComponent } from './lihat-cicilan/lihat-cicilan.component';
 import { CicilanbaruComponent } from './cicilanbaru/cicilanbaru.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpconfigInterceptor } from './interceptor/httpconfig.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpconfigInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

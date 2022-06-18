@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { URLConstant } from '../constant/URLConstant';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  balance:number=0;
+  salary:number=0;
+  //transactionList:<>
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-  }
+    this.http.get(URLConstant.GetSalary, {}).subscribe(
+      (response) => {
+        console.log(response)
+      }
+    )
+    this.http.get(URLConstant.GetTransaction, {}).subscribe(
+      (response) => {
+        console.log(response)
 
+
+      }
+    )
+  }
 }
