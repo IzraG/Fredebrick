@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fredebrick';
+  main_menu: boolean= true;
 }
 
 const Employmentsample: financialdatamodel =
