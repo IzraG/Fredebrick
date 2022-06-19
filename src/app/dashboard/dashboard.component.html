@@ -1,1 +1,23 @@
-<p>dashboard works!</p>
+<div class="container">
+    <div>
+        <img src='/assets/CR.jpg' class="" style="width: 5em;">
+    </div>
+    <div>
+        <h4>
+            Selamat Datang, Bang CR!
+
+        </h4>
+    </div>
+    <div>
+        <h5>
+            Gaji anda saat ini: Rp. {{(salary).toLocaleString('en-us', {minimumFractionDigits: 2})}}
+        </h5>
+        <h5>
+            Sisa kekuatan cicilan anda: Rp. {{((salary/2)-total_cicilan).toLocaleString('en-us', {minimumFractionDigits: 2})}}
+        </h5>
+    </div>
+
+
+
+
+</div>

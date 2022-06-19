@@ -1,4 +1,4 @@
-import { ifError } from "assert";
+
 
 export class SkemaCicilan {
   NTF:number= 0;

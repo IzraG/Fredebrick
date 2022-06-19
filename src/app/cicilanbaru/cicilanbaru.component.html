@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <form class="form form-horizontal" (ngSubmit)="FormGroup.valid && SaveForm()" (FormGroup)="FormGroup">
+    <form class="form form-horizontal" (ngSubmit)="FormGroup.valid && SaveForm()" [formGroup]="FormGroup" (FormGroup)="FormGroup">
         <div class="container-fluid ">
             <div class="row d-flex justify-content-center">
                 <div class="col-2 ">
@@ -33,6 +33,21 @@
                     <input type="number" name="Bunga" class="form-control" formControlName="Bunga">
                 </div>
             </div>
+            <div class="row d-flex justify-content-center">
+                <button type="submit" class="w-25 btn-light btn">
+                  Submit
+                </button>
+            </div>
         </div>
     </form>
+    <div class="dataCicilan container" *ngIf="viewDataCicilan">
+        <div class="container row-cols-2">
+            <div>
+                Cicilan Per Bulan:
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
 </div>
