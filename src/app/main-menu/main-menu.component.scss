@@ -5,10 +5,18 @@
     margin-bottom: 10px;
 }
 
+img{
+    box-shadow: 10px #06283D;
+}
+
 .container{
     // background-color: #06283d1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 35%;
     padding: 50px 0px;
+    z-index: 2;
 }
 
 $gradient: .2;
@@ -22,7 +30,7 @@ $gradient: .2;
         rgba(0, 0, 0, $gradient)
       ),url('/assets/background.png');
     background-size: cover;
-    background-color: #DFF6FF;
+    background-color: #06283D;
 }
 
 h1{
@@ -40,6 +48,7 @@ h1{
     display: flex;
     justify-content: center;
     margin-top: 5px;
+    padding-bottom: 50px;
 }
 
 .menu button{
