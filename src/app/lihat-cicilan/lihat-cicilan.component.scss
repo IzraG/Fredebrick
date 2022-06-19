@@ -1,14 +1,20 @@
 $borderRadius: .2em;
+$gradient: .2;
 .main {
     display: flex;
     flex-direction: column;
-    background-color: #DFF6FF;
+    background-image: linear-gradient( rgba(0, 0, 0, $gradient), rgba(0, 0, 0, $gradient)), url('/assets/background.png');
+    background-size: cover;
+    background-color: #06283D;
+    height: 100vh;
     padding-top: 100px;
     height: 92.6vh;
+    z-index: 2000;
 }
 
 .title {
     text-align: center;
+    color: #DFF6FF;
 }
 
 .toptable {
@@ -25,34 +31,34 @@ $borderRadius: .2em;
 .subdiv #left {
     border-radius: 0% 0% 0px $borderRadius;
     border-top: 0px;
-    border-left: 2px solid #06283D;
-    border-bottom: 2px solid #06283D;
-    border-right: 2px solid #06283D;
+    border-left: 2px solid #DFF6FF;
+    border-bottom: 2px solid #DFF6FF;
+    border-right: 2px solid #DFF6FF;
 }
 
 .subdiv #right {
     border-radius: 0% 0% $borderRadius 0px;
     border-top: 0px;
     border-left: 0px;
-    border-bottom: 2px solid #06283D;
-    border-right: 2px solid #06283D;
+    border-bottom: 2px solid #DFF6FF;
+    border-right: 2px solid #DFF6FF;
 }
 
 .h4table{
-    color: #DFF6FF;
+    color: #06283D;
     font-weight: bolder;
-    background-color: #06283D;
+    background-color: #DFF6FF;
     text-align: center;
-    border: 2px solid #06283D;
+    border: 2px solid #DFF6FF;
     border-radius: $borderRadius $borderRadius 0% 0%;
     margin: 0px;
     padding: 5px 0px;
 }
 
 .h5table {
-    color: #06283D;
+    color: #DFF6FF;
     text-align: center;
-    border: 2px solid #06283D;
+    border: 2px solid #DFF6FF;
     border-radius: 0% 0% $borderRadius $borderRadius;
     width: 100%;
     border-top: 0px;
