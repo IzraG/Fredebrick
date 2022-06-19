@@ -50,24 +50,31 @@
             </div>
         </div>
         <table>
-            <tr>
-                <th *ngFor="let header of Headers">{{header}}</th>
-            </tr>
-            <tr *ngFor="let a of SkemaCicilan.ListAngsuran">
-                <td>
-                    {{a.InstallmentAmount}}
-                </td>
-                <td>
-                    {{a.Pokok}}
-                </td>
-                <td>
-                    {{a.SisaPokok}}
-                </td>
-                <td>
-                    {{a.Bunga}}
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <th class="num">#</th>
+                    <th *ngFor="let header of Headers">{{header}}</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor="let a of SkemaCicilan.ListAngsuran, let i = index">
+                    <td class="num">{{i+1}}</td>
+                    <td>
+                        Rp{{(a.InstallmentAmount).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
+                    </td>
+                    <td>
+                        Rp{{(a.Pokok).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
+                    </td>
+                    <td>
+                        Rp{{(a.Bunga).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
+                    </td>
+                    <td>
+                        Rp{{(a.SisaPokok).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
-    <!-- <app-video-call></app-video-call> -->
+    <app-vid-call></app-vid-call>
 </div>
