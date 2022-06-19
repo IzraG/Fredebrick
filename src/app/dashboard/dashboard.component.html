@@ -1,23 +1,31 @@
-<div class="container">
-    <div>
-        <img src='/assets/CR.jpg' class="" style="width: 5em;">
+<body>
+    <div class="container">
+        <div>
+            <img src='/assets/CR.jpg' class="" style="width: 5em;">
+        </div>
+        <div>
+            <h4 style="margin-top: 20px;">
+                <b>Selamat Datang, Bang CR!</b>
+    
+            </h4>
+        </div>
+        <div class="profile">
+            <h5>
+                Gaji Anda Saat Ini
+            </h5>
+            <h5>
+                <b>Rp{{(salary).toLocaleString('en-us', {minimumFractionDigits: 2})}}</b>
+            </h5>
+            <h5>
+                Sisa Kekuatan Cicilan Anda
+            </h5>
+            <h5>
+                <b>Rp{{((salary/2)-total_cicilan).toLocaleString('en-us', {minimumFractionDigits: 2})}}</b>
+            </h5>
+        </div>
+    
+    
+    
+    
     </div>
-    <div>
-        <h4>
-            Selamat Datang, Bang CR!
-
-        </h4>
-    </div>
-    <div>
-        <h5>
-            Gaji anda saat ini: Rp. {{(salary).toLocaleString('en-us', {minimumFractionDigits: 2})}}
-        </h5>
-        <h5>
-            Sisa kekuatan cicilan anda: Rp. {{((salary/2)-total_cicilan).toLocaleString('en-us', {minimumFractionDigits: 2})}}
-        </h5>
-    </div>
-
-
-
-
-</div>
+</body>

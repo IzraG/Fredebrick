@@ -1,8 +1,18 @@
 /* Bordered form */
-form {
-    border: 3px solid #f1f1f1;
+$gradient: .2;
+  form{
+    height: 93.3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, $gradient),
+        rgba(0, 0, 0, $gradient)
+      ),url('/assets/background.png');
+    background-size: cover;
+    background-color: #06283D;
+    color:#DFF6FF;
   }
-  
   /* Full-width inputs */
   input[type=text], input[type=password] {
     width: 100%;
@@ -15,12 +25,8 @@ form {
   
   /* Set a style for all buttons */
   button {
-    background-color: #04AA6D;
-    color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
-    cursor: pointer;
     width: 100%;
   }
   
@@ -50,7 +56,22 @@ form {
   
   /* Add padding to containers */
   .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 16px;
+    width: 20%;
+    background-color: #06283D;
+    box-shadow: 0px 0px 3px 1px #051c2b;
+  }
+
+  label{
+    text-align: left;
+  }
+
+  input{
+    background-color: #06283D;
+    color: #DFF6FF;
   }
   
   /* The "Forgot password" text */
