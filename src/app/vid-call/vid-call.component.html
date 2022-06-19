@@ -1,14 +1,15 @@
-<div class="container">
-    <div>
-        <button (click)="ViewVidCall = true">Kontak WOM sekarang!</button>
+<div class="container d-grid justify-content-center">
+    <div class="container d-grid justify-content-center">
+        <button (click)="ViewVidCall = true" class="btn">Kontak WOM sekarang!</button>
     </div>
-    <div class="container row d-grid justify-content-center">
-        <div style="width: 300px;" class="col-2">
-            <img src="/assets/Izra.png">
+    <br>
+    <div *ngIf="ViewVidCall" class="container row">
+        <div style="height: 300px;" class="col">
+            <img width="100%" src="/assets/Izra.png">
 
         </div>
-        <div style="width: 300px;" class="col-2">
-            <img src="/assets/WOM_DIHATII_FIXGOL.jpg">
+        <div style="height: 300px;" class="col">
+            <img width="100%" src="/assets/WOM_DIHATII_FIXGOL.jpg">
         </div>
     </div>
 </div>
