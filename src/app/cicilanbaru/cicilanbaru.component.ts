@@ -32,13 +32,8 @@ export class CicilanbaruComponent implements OnInit {
   SaveForm(){
     this.viewDataCicilan=true;
     let Form = this.FormGroup.value;
-    this.SkemaCicilan = calculate_installmentFixedRegular( 
-    this.FormGroup.get("Harga")?.value,
-    this.FormGroup.get("DP")?.value,
-    this.FormGroup.get("Bunga")?.value,
-    this.FormGroup.get("Harga")?.value,
-    
-    )
+    this.SkemaCicilan = calculate_installmentFixedRegular(Form.Harga, Form.DP,Form.Bunga, 5000000);
+    console.log(this.SkemaCicilan);
   }
 
 

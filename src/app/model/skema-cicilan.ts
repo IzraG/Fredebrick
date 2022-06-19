@@ -5,40 +5,43 @@ export class SkemaCicilan {
   SukuBunga: number= 0;
   Tenor: number= 0;
   PresentValue: number= 0;
-  ListAngsuran: Array<Angsuran> = [new Angsuran];
+  ListAngsuran: Array<Angsuran> = new Array<Angsuran>();
 }
 export class Angsuran {
   InstallmentAmount: number = 0;
   Pokok: number = 0;
   SisaPokok: number =0;
-  Bunga: number = 0;
+  Bunga: number = 0 ;
 }
 export function calculate_installmentFixedRegular(Harga: number, DP: number, Bunga:number, sisaGaji: number){
-
+  console.log(Bunga)
   let jumlahcicilan: number = 0;
   let jumlahangsuran: number = 0;
   let ir:number = Bunga/12/100;
-  let pv:number = -1*(Harga-DP);
+  let pv:number = -(Harga-DP);
   let fv: number = 0;
   let type:number = 0;
 
   do{
     {
-      jumlahcicilan+6;
-      jumlahangsuran = PMT(ir,jumlahcicilan,pv,fv,type)
+      jumlahcicilan= jumlahcicilan+6;
+      jumlahangsuran = PMT(ir,jumlahcicilan,pv,fv,type);
+
     }
   }while(jumlahangsuran > sisaGaji)
-  let returnCicilan: SkemaCicilan= new SkemaCicilan;
+  let returnCicilan: SkemaCicilan= new SkemaCicilan();
+  returnCicilan.NTF = -1*(pv);
+  returnCicilan.SukuBunga = ir;
+  returnCicilan.Tenor = jumlahcicilan;
+  returnCicilan.PresentValue = pv;
 
-  for(let num = 0;num<jumlahangsuran;num++){
-    returnCicilan.NTF = -1*(pv);
-    returnCicilan.SukuBunga = ir;
-    returnCicilan.Tenor = jumlahcicilan;
-    returnCicilan.PresentValue = pv;
-    returnCicilan.ListAngsuran[0].InstallmentAmount = jumlahangsuran;
+  for(let num = 0; num<jumlahcicilan ;num++){
+
+    returnCicilan.ListAngsuran[num] = new Angsuran();
+    returnCicilan.ListAngsuran[num].InstallmentAmount = jumlahangsuran;
 
     if(num == 0){
-      returnCicilan.ListAngsuran[num].Bunga = ir*pv;
+      returnCicilan.ListAngsuran[num].Bunga = ir*returnCicilan.NTF;
     }else{
       returnCicilan.ListAngsuran[num].Bunga = (ir * returnCicilan.ListAngsuran[(num-1)].SisaPokok);
 
@@ -51,6 +54,7 @@ export function calculate_installmentFixedRegular(Harga: number, DP: number, Bun
     else{
       returnCicilan.ListAngsuran[num].SisaPokok = returnCicilan.ListAngsuran[num-1].SisaPokok - returnCicilan.ListAngsuran[num].Pokok;
     }
+
   }
   return returnCicilan;
 }

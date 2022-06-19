@@ -41,13 +41,29 @@
         </div>
     </form>
     <div class="dataCicilan container" *ngIf="viewDataCicilan">
-        <div class="container row-cols-2">
+        <div class="container row">
             <div>
-                Cicilan Per Bulan:
+                Cicilan Per Bulan: Rp. {{(SkemaCicilan.ListAngsuran[0].InstallmentAmount).toLocaleString('en-us', {minimumFractionDigits: 2})}}
             </div>
             <div>
-
+                Jumlah Cicilan: {{SkemaCicilan.Tenor}} Bulan / {{SkemaCicilan.Tenor/12}} Tahun
             </div>
         </div>
+        <table>
+            <tr *ngFor="let a of SkemaCicilan.ListAngsuran">
+                <td>
+                    {{a.InstallmentAmount}}
+                </td>
+                <td>
+                    {{a.Pokok}}
+                </td>
+                <td>
+                    {{a.SisaPokok}}
+                </td>
+                <td>
+                    {{a.Bunga}}
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
