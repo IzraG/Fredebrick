@@ -13,6 +13,7 @@ export class CicilanbaruComponent implements OnInit {
   SkemaCicilan: SkemaCicilan = new SkemaCicilan;
   Headers:Array<String> = ["Installment Amount","Pokok","Bunga","Sisa Pokok"]
   Submitted: boolean = false;
+  viewVidCall:boolean= false;
   constructor(
     private fb:FormBuilder
   ) {

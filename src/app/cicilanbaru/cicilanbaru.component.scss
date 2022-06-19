@@ -77,8 +77,19 @@ td {
     width: 30%;
 }
 
+button,
+input,
+table,
+td {
+    background-color: #172333;
+    color: white;
+}
+
 table {
     z-index: 50;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: 80vw;
 }
 
 .container {

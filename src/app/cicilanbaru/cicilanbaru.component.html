@@ -1,10 +1,9 @@
 <body>
     <div class="container-fluid">
         <h2 class="title"><b>Hitung Cicilan baru</b></h2>
+        <br>
         <form style="z-index: 50000;" *ngIf="!Submitted" class="form form-horizontal" (ngSubmit)="FormGroup.valid && SaveForm()" [formGroup]="FormGroup" (FormGroup)="FormGroup">
-            <div class="container-fluid upper d-flex justify-content-center">
-                <img style="z-index: 50000;" src="/assets/WOM.png" width="300px" (click)="WOM()">
-            </div>
+
             <div class="container-fluid upper">
                 <div class="row d-flex justify-content-center">
                     <div class="col-2 ">
@@ -43,31 +42,37 @@
                       Submit
                     </button>
                 </div>
+                <div class="container-fluid upper d-flex justify-content-center">
+                    <img style="z-index: 50000;" src="/assets/WOM.png" width="300px" (click)="WOM()">
+                </div>
             </div>
         </form>
-        <div class="dataCicilan" *ngIf="viewDataCicilan">
-            <div class="container dataUpper mb-0 text-center w-100">
+        <br>
+        <div class="dataCicilan" *ngIf="viewDataCicilan && !viewVidCall">
+            <div class=" container dataUpper mb-0 text-center w-100 ">
                 <h3>
                     Berdasarkan data finansial kamu, berikut skema terbaik untuk kamu!
                 </h3>
-                <h4>
-                    Cicilan Per Bulan: Rp. {{(SkemaCicilan.ListAngsuran[0].InstallmentAmount).toLocaleString('en-us', {minimumFractionDigits: 2})}}
+                <h4 class="d-flex justify-content-center ">
+                    Cicilan Per Bulan:
+                    <p style="color: greenyellow "> Rp{{(SkemaCicilan.ListAngsuran[0].InstallmentAmount).toLocaleString('en-us', {minimumFractionDigits: 2})}}</p>
                 </h4>
                 <h4>
                     Jumlah Cicilan: {{SkemaCicilan.Tenor}} Bulan / {{SkemaCicilan.Tenor/12}} Tahun
                 </h4>
             </div>
-            <table class="table">
+            <br>
+            <table class="table ">
                 <thead>
                     <tr>
-                        <th class="num">#</th>
-                        <th *ngFor="let header of Headers">{{header}}</th>
+                        <th class="num ">#</th>
+                        <th *ngFor="let header of Headers ">{{header}}</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr *ngFor="let a of SkemaCicilan.ListAngsuran, let i = index">
-                        <td class="num">{{i+1}}</td>
+                    <tr *ngFor="let a of SkemaCicilan.ListAngsuran, let i=index ">
+                        <td class="num ">{{i+1}}</td>
                         <td>
                             Rp{{(a.InstallmentAmount).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
                         </td>
@@ -84,7 +89,7 @@
                 </tbody>
             </table>
         </div>
-        <app-vid-call></app-vid-call>
+        <app-vid-call (click)="viewVidCall=true "></app-vid-call>
     </div>
 
 </body>
