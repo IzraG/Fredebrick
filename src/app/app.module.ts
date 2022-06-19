@@ -9,6 +9,7 @@ import { CicilanbaruComponent } from './cicilanbaru/cicilanbaru.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpconfigInterceptor } from './interceptor/httpconfig.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     NavbarComponent,
     LihatCicilanComponent,
     CicilanbaruComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

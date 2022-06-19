@@ -10,6 +10,7 @@ export class AppComponent {
   main_menu: boolean= false;
   lihat_cicilan: boolean = true;
   cicilanBaru: boolean = true;
+  login : boolean = false;
 }
 
 const Employmentsample: financialdatamodel =
