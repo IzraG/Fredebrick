@@ -4,18 +4,14 @@ $borderRadius: .2em;
     flex-direction: column;
     background-color: #DFF6FF;
     padding-top: 100px;
-    height: 92.5vh;
+    height: 92.6vh;
 }
 
 .title {
     text-align: center;
 }
 
-col {
-    border: 2px solid #06283D;
-}
-
-.row {
+.toptable {
     display: flex;
     justify-content: space-evenly;
     padding-top: 50px;
@@ -42,10 +38,10 @@ col {
     border-right: 2px solid #06283D;
 }
 
-h4 {
-    color: #06283D;
+.h4table{
+    color: #DFF6FF;
     font-weight: bolder;
-    background-color: transparent;
+    background-color: #06283D;
     text-align: center;
     border: 2px solid #06283D;
     border-radius: $borderRadius $borderRadius 0% 0%;
@@ -53,7 +49,7 @@ h4 {
     padding: 5px 0px;
 }
 
-h5 {
+.h5table {
     color: #06283D;
     text-align: center;
     border: 2px solid #06283D;
@@ -61,4 +57,74 @@ h5 {
     width: 100%;
     border-top: 0px;
     padding: 7px 0px;
+}
+
+table{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: x-large;
+    // border: 2px solid #06283D;
+    box-shadow: 0px 0px 3px 1px gray;
+    border-radius: $borderRadius;
+    margin-top: 50px;
+}
+
+th{
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+}
+
+tr{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.trheader{
+    color: #06283D;
+    background-color: white;
+    border-radius: $borderRadius $borderRadius 0% 0%;
+}
+
+td{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    width: 30%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px !important;
+    width: 20% !important;
+    margin: 0px 15px;
+    margin-top: 70px;
+    box-shadow: 0px 0px 2px 1px gainsboro;
+    border-radius: 1em;
+}
+
+.num{
+    display: flex;
+    justify-content: space-evenly;
+    width: 10%;
+}
+
+.rowcard{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+img{
+    margin-bottom: 20px;
+}
+
+.container-fluid{
+    display: flex;
+    justify-content: center;
+    padding: 0px 15%;
+    margin-bottom: 70px;
 }

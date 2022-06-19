@@ -14,40 +14,64 @@
 <div class="main">
     <h2 class="title"><b>Cicilan Anda</b></h2>
     <div class="container">
-        <div class="row">
+        <div class="row toptable">
             <div class="col">
-                <h4>Total Kewajiban per Bulan</h4>
-                <h5><b>Rp. {{(TotalKewajiban).toLocaleString('en-us', {minimumFractionDigits: 2})}}</b></h5>
+                <h4 class="h4table">Total Kewajiban per Bulan</h4>
+                <h5 class="h5table"><b>Rp{{(TotalKewajiban).toLocaleString('en-us', {minimumFractionDigits: 2})}}</b></h5>
             </div>
             <div class="col">
-                <h4>Besar Pembayaran Selanjutnya</h4>
+                <h4 class="h4table">Besar Pembayaran Selanjutnya</h4>
                 <div class="subdiv">
-                    <h5 id="left"><b>16 September 2022</b></h5>
-                    <h5 id="right"><b>Rp20,520,000</b></h5>
+                    <h5 class="h5table" id="left"><b>16 September 2022</b></h5>
+                    <h5 class="h5table" id="right"><b>Rp20,520,000.00</b></h5>
                 </div>
             </div>
             <div class="col">
-                <h4>Yang Sudah Terkumpul</h4>
-                <h5><b>SEMUA</b></h5>
+                <h4 class="h4table">Yang Sudah Terkumpul</h4>
+                <h5 class="h5table"><b>Rp15,000,000.00</b></h5>
             </div>
         </div>
     </div>
-    <div class="container">
-        <Table>
-            <tr>
-                <th *ngFor="let header of Headers">{{header}}</th>
-            </tr>
-            <tr *ngFor="let item of CicilanDummy">
-                <td>
+    <div class="container-fluid">
+        <div class="row rowcard">
+            <div class="card" *ngFor="let item of CicilanDummy, let i = index,">
+                <h2 class="h5card">
                     {{item.NamaCicilan}}
-                </td>
-                <td>
-                    Rp. {{(item.Jumlah).toLocaleString('en-us', {minimumFractionDigits: 2})}}
-                </td>
-                <td>
+                </h2>
+                <img src="{{item.ImgUrl}}" width="150px" height="150px">
+                <h5><b>Jumlah</b></h5>
+                <h5 class="h5card">
+                    Rp{{(item.Jumlah).toLocaleString('en-us', {minimumFractionDigits: 2})}}
+                </h5>
+                <h5><b>Sisa Cicilan</b></h5>
+                <h5 class="h5card">
                     {{item.SisaCicilan}}
-                </td>
-            </tr>
-        </Table>
+                </h5>
+            </div>
+        </div>
     </div>
+    <!-- <div class="container">
+        <table class="table">
+            <thead>
+                <tr class="trheader">
+                    <th class="num">#</th>
+                    <th *ngFor="let header of Headers">{{header}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of CicilanDummy, let i = index,">
+                    <td class="num">{{i+1}}</td>
+                    <td >
+                        {{item.NamaCicilan}}
+                    </td>
+                    <td>
+                        Rp{{(item.Jumlah).toLocaleString('en-us', {minimumFractionDigits: 2})}}
+                    </td>
+                    <td>
+                        {{item.SisaCicilan}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
 </div>

@@ -13,27 +13,31 @@ export class LihatCicilanComponent implements OnInit {
   ngOnInit(): void {
     this.TotalKewajiban = this.CicilanDummy.reduce((accumulator, current)=> {return accumulator+current.Jumlah}, 0)
   }
-  Headers:Array<String> = ["NamaCicilan","Jumlah","SisaCicilan"]
+  Headers:Array<String> = ["Nama Cicilan","Jumlah","Sisa Cicilan"]
   CicilanDummy: Array<ListCicilan>=[
     {
       NamaCicilan: 'Asuransi',
       Jumlah: 520000,
-      SisaCicilan: '-'
+      SisaCicilan: '-',
+      ImgUrl: '/assets/asuransi.png'
     },
     {
       NamaCicilan: 'Mobil Brio',
       Jumlah: 6000000,
-      SisaCicilan: 'Rp. 180,000,000.00'
+      SisaCicilan: 'Rp180,000,000.00',
+      ImgUrl: '/assets/car.png'
     },
     {
       NamaCicilan: 'Motor Mio',
       Jumlah: 3000000,
-      SisaCicilan: 'Rp. 12,000,000.00'
+      SisaCicilan: 'Rp12,000,000.00',
+      ImgUrl: '/assets/motor.png'
     },
     {
       NamaCicilan: 'Rumah Sunter',
       Jumlah: 8000000,
-      SisaCicilan: 'Rp. 1,300,000,000'
+      SisaCicilan: 'Rp1,300,000,000',
+      ImgUrl: '/assets/house.png'
     }
   ]
 }
