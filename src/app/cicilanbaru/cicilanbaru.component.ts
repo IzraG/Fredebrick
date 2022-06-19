@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CicilanbaruComponent implements OnInit {
   viewDataCicilan: boolean = false;
   SkemaCicilan: SkemaCicilan = new SkemaCicilan;
-
+  Headers:Array<String> = ["Installment Amount","Pokok","Bunga","Sisa Pokok"]
 
   constructor(
     private fb:FormBuilder

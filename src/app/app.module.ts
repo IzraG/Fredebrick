@@ -10,7 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpconfigInterceptor } from './interceptor/httpconfig.interceptor';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import { VideoCallComponent } from './video-call/video-call.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { VideoCallComponent } from './video-call/video-call.component';
     NavbarComponent,
     LihatCicilanComponent,
     CicilanbaruComponent,
-    LoginComponent,
-    VideoCallComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
