@@ -43,7 +43,7 @@
     <div class="dataCicilan container" *ngIf="viewDataCicilan">
         <div class="container row">
             <div>
-                Cicilan Per Bulan: Rp. {{(SkemaCicilan.ListAngsuran[0].InstallmentAmount).toLocaleString('en-us', {minimumFractionDigits: 2})}}
+                Cicilan Per Bulan: Rp. {{(SkemaCicilan.ListAngsuran[0].InstallmentAmount).toLocaleString('en-us', {minimumFractionDigits: 2,maximumFractionDigits:2})}}
             </div>
             <div>
                 Jumlah Cicilan: {{SkemaCicilan.Tenor}} Bulan / {{SkemaCicilan.Tenor/12}} Tahun
