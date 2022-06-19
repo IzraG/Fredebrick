@@ -8,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LihatCicilanComponent implements OnInit {
 
+
   constructor() { }
   TotalKewajiban: number=0;
   ngOnInit(): void {
     this.TotalKewajiban = this.CicilanDummy.reduce((accumulator, current)=> {return accumulator+current.Jumlah}, 0)
   }
-  Headers:Array<String> = ["Nama Cicilan","Jumlah","Sisa Cicilan"]
+  Headers:Array<String> = ["NamaCicilan","Jumlah","SisaCicilan"]
   CicilanDummy: Array<ListCicilan>=[
     {
       NamaCicilan: 'Asuransi',

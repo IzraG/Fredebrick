@@ -1,3 +1,4 @@
+import { calculate_installmentFixedRegular, SkemaCicilan } from './../model/skema-cicilan';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -8,6 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 })
 export class CicilanbaruComponent implements OnInit {
+  viewDataCicilan: boolean = false;
+  SkemaCicilan: SkemaCicilan = new SkemaCicilan;
+
 
   constructor(
     private fb:FormBuilder
@@ -18,15 +22,17 @@ export class CicilanbaruComponent implements OnInit {
   FormGroup: FormGroup = this.fb.group({
     Aset:['',Validators.required],
     Harga:[0,Validators.required],
-    DP:['',Validators.required],
-    Bunga:['',Validators.required]
+    DP:[0],
+    Bunga:[0]
   })
 
   ngOnInit(): void {
 
   }
   SaveForm(){
-
+    this.viewDataCicilan=true;
+    let Form = this.FormGroup.value;
+    this.SkemaCicilan = calculate_installmentFixedRegular(Form.Harga)
   }
 
 
