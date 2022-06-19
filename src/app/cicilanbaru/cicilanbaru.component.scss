@@ -1,6 +1,6 @@
 $borderRadius: .2em;
 $gradient: .2;
-body{
+body {
     background-image: linear-gradient( rgba(0, 0, 0, $gradient), rgba(0, 0, 0, $gradient)), url('/assets/background.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -10,10 +10,16 @@ body{
     z-index: 2;
 }
 
-.upper{
+.upper {
     color: #DFF6FF;
 }
-table{
+
+h4,
+h3 {
+    color: #DFF6FF;
+}
+
+table {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -21,60 +27,61 @@ table{
     // border: 2px solid #06283D;
     box-shadow: 0px 0px 3px 1px gray;
     border-radius: $borderRadius;
-    margin-top: 50px;
 }
-.container-fluid{
-    padding-top: 100px;
-}
+
 .title {
     text-align: center;
     color: #DFF6FF;
 }
 
-button{
-    margin: 50px 0px;
+button {
+    margin: 30px 0px;
     background-color: #DFF6FF;
 }
 
-.dataCicilan{
+.dataCicilan {
     display: flex;
     flex-direction: column;
     justify-content: center;
-   
 }
 
-.trheader{
-    color: #06283D;
-    background-color: white;
+.trheader {
+    color: #DFF6FF;
+    background-color: #06283D;
     border-radius: $borderRadius $borderRadius 0% 0%;
 }
 
-th{
+th {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+    color: #DFF6FF;
+    background-color: #06283D;
+}
+
+.num {
     display: flex;
     justify-content: space-evenly;
     width: 20%;
 }
 
-.num{
-    display: flex;
-    justify-content: space-evenly;
-    width: 20%;
-}
-
-
-tr{
+tr {
     display: flex;
     justify-content: space-evenly;
 }
 
-td{
+td {
     display: flex;
     justify-content: space-evenly;
     background-color: white;
     width: 30%;
 }
 
-.container{
+table {
+    z-index: 50;
+}
+
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;

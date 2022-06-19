@@ -11,5 +11,7 @@ export class VidCallComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  WOM(){
 
+  }
 }

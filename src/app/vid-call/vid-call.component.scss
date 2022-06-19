@@ -1,8 +1,9 @@
-.vidcall{
+.vidcall {
     display: flex;
     justify-content: space-evenly;
+    z-index: 50000;
 }
 
-img{
+img {
     margin: 30px 50px;
 }

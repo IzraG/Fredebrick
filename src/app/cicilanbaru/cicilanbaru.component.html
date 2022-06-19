@@ -1,7 +1,10 @@
 <body>
     <div class="container-fluid">
-        <h2 class="title"><b>Cicilan Anda</b></h2>
-        <form class="form form-horizontal" (ngSubmit)="FormGroup.valid && SaveForm()" [formGroup]="FormGroup" (FormGroup)="FormGroup">
+        <h2 class="title"><b>Hitung Cicilan baru</b></h2>
+        <form style="z-index: 50000;" *ngIf="!Submitted" class="form form-horizontal" (ngSubmit)="FormGroup.valid && SaveForm()" [formGroup]="FormGroup" (FormGroup)="FormGroup">
+            <div class="container-fluid upper d-flex justify-content-center">
+                <img style="z-index: 50000;" src="/assets/WOM.png" width="300px" (click)="WOM()">
+            </div>
             <div class="container-fluid upper">
                 <div class="row d-flex justify-content-center">
                     <div class="col-2 ">
@@ -43,7 +46,10 @@
             </div>
         </form>
         <div class="dataCicilan" *ngIf="viewDataCicilan">
-            <div class="container row dataUpper">
+            <div class="container dataUpper mb-0 text-center w-100">
+                <h3>
+                    Berdasarkan data finansial kamu, berikut skema terbaik untuk kamu!
+                </h3>
                 <h4>
                     Cicilan Per Bulan: Rp. {{(SkemaCicilan.ListAngsuran[0].InstallmentAmount).toLocaleString('en-us', {minimumFractionDigits: 2})}}
                 </h4>
@@ -58,7 +64,7 @@
                         <th *ngFor="let header of Headers">{{header}}</th>
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     <tr *ngFor="let a of SkemaCicilan.ListAngsuran, let i = index">
                         <td class="num">{{i+1}}</td>
@@ -80,5 +86,5 @@
         </div>
         <app-vid-call></app-vid-call>
     </div>
-    
+
 </body>

@@ -12,7 +12,7 @@ export class CicilanbaruComponent implements OnInit {
   viewDataCicilan: boolean = false;
   SkemaCicilan: SkemaCicilan = new SkemaCicilan;
   Headers:Array<String> = ["Installment Amount","Pokok","Bunga","Sisa Pokok"]
-
+  Submitted: boolean = false;
   constructor(
     private fb:FormBuilder
   ) {
@@ -34,8 +34,16 @@ export class CicilanbaruComponent implements OnInit {
     let Form = this.FormGroup.value;
     this.SkemaCicilan = calculate_installmentFixedRegular(Form.Harga, Form.DP,Form.Bunga, 5000000);
     console.log(this.SkemaCicilan);
+    this.Submitted = true;
   }
 
-
+  WOM(){
+    this.FormGroup.setValue({
+      Aset:"Emas",
+      Harga:1000000,
+      DP:0,
+      Bunga:0
+    })
+  }
 
 }
