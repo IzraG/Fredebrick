@@ -13,6 +13,9 @@ export class MainMenuComponent implements OnInit {
   particles = 80;
   innerWidth = window.innerWidth;
 
+
+  pageHistory:Array<string>=[""]
+
   constructor(private renderer: Renderer2, public el : ElementRef) {
     this.currentPage="mainMenu"
    }
@@ -24,11 +27,15 @@ export class MainMenuComponent implements OnInit {
  
 
   changePage(page:string){
-    this.backPage=this.currentPage
+    this.pageHistory.push(this.currentPage)
     this.currentPage=page
   }
   back(){
-    this.currentPage=this.backPage
+    if(this.pageHistory.length>1){ 
+      this.currentPage=this.pageHistory[this.pageHistory.length-1] 
+      this.pageHistory.pop()
+    }
+    
   }
 
   createParticles(){
