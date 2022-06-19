@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   @Input('CurrentPage') CurrentPage?:string;
-  @Output('NavigatePage') NavigatePage = new EventEmitter<string>();
+  @Output('Back') Back = new EventEmitter<string>();
   @Output('LoginPage') LoginPage = new EventEmitter<string>();
   constructor() { }
 
@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onClick(action:string){
-    this.NavigatePage.emit("action")
+    this.Back.emit(action)
   }
   onLogin(){
     this.LoginPage.emit("login")
