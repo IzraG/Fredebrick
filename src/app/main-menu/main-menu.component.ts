@@ -7,13 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor() { }
+  currentPage:string=""
+  backPage:string=""
+
+  constructor() {
+    this.currentPage="mainMenu"
+   }
 
   ngOnInit(): void {
   }
 
-  lihat_cicilan(): void{
-    // this.lihat_cicilan = true;
+ 
+
+  changePage(page:string){
+    this.backPage=this.currentPage
+    this.currentPage=page
+  }
+  back(){
+    this.currentPage=this.backPage
   }
 
 }

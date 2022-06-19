@@ -1,0 +1,12 @@
+        
+        <form class="form form-horizontal"(ngSubmit)="FormGroup.valid" [formGroup]="FormGroup" #enjiForm="ngForm">
+           
+        <div class="container">
+            <label for="username"><b>Username</b></label>
+            <input type="text" name="username" class="form-control" formControlName="username">
+            <label for="password"><b>Password</b></label>
+            <input type="password" name="password" class="form-control" formControlName="password">
+            <button type="submit">Login</button>
+        </div>
+
+    </form>

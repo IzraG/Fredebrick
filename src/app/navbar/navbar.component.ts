@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  @Input('CurrentPage') CurrentPage?:string;
+  @Output('NavigatePage') NavigatePage = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onClick(action:string){
+    this.NavigatePage.emit("action")
+  }
 }

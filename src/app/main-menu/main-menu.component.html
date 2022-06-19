@@ -1,4 +1,6 @@
-<div class="main">
+<app-navbar [CurrentPage]="currentPage"
+(Back)="back()"></app-navbar>
+<div class="main" *ngIf="currentPage=='mainMenu'">
     <div class="title">
         <img src="/assets/cilandak.png" style="padding-bottom: 20px;" height="150px" width="150px" alt="">
         <h1><b>C  I  L  A  N  D  A  K</b></h1>
@@ -6,7 +8,15 @@
     </div>
 
     <div class="menu">
-        <button class="btn btn-outline-dark" type="button" (click)="lihat_cicilan()"><h3><b>Lihat Cicilan</b></h3></button>
-        <button class="btn btn-outline-dark" type="button"><h3><b>Cicilan Baru</b></h3></button>
+        <button class="btn btn-outline-dark" type="button" (click)="changePage('lihatCicilan')"><h3><b>Lihat Cicilan</b></h3></button>
+        <button class="btn btn-outline-dark" type="button" (click)="changePage('cicilanBaru')"><h3><b>Cicilan Baru</b></h3></button>
     </div>
 </div>
+<app-lihat-cicilan 
+*ngIf="currentPage=='lihatCicilan'">
+
+</app-lihat-cicilan>
+
+<app-cicilanbaru *ngIf="currentPage=='cicilanBaru'">
+
+</app-cicilanbaru>
