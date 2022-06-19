@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fredebrick';
-  main_menu: boolean= false;
-  lihat_cicilan: boolean = true;
-  cicilanBaru: boolean = true;
+  main_menu: boolean= true;
+  lihat_cicilan: boolean = false;
+  cicilanBaru: boolean = false;
   login : boolean = false;
 }
 

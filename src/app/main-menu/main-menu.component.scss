@@ -2,36 +2,83 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: rgb(246, 216, 147);
+    margin-bottom: 10px;
 }
 
+.container{
+    // background-color: #06283d1a;
+    width: 35%;
+    padding: 50px 0px;
+}
+
+$gradient: .2;
 .main{
-    // padding-top: 330px;
-    // padding-bottom: 350px;
-    height: 92.5vh;
+    height: 93.3vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, $gradient),
+        rgba(0, 0, 0, $gradient)
+      ),url('/assets/background.png');
+    background-size: cover;
     background-color: #DFF6FF;
 }
 
 h1{
     // color: #06283D;
     color: #47B5FF;
+    text-shadow: 2px 2px #06283D;
 }
 
 .title h3{
-    color: #1363DF;
+    color: #DFF6FF;
+    text-shadow: 2px 2px #06283D;
 }
 
 .menu{
     display: flex;
     justify-content: center;
+    margin-top: 5px;
 }
 
 .menu button{
-    // background-color: #DFF6FF;
+    
     // border: 2px solid #06283D;
-    margin: 30px 50px;
+    margin: 0px 50px;
+    z-index: 2;
     // color: #06283D;
+}
+
+@keyframes snowflake-fall{
+    0%{
+        top: -15%;
+    }
+    100%{
+        top: 100%;
+    }
+}
+
+@keyframes snowflake-move{
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(75px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+.snowflake{
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 0 0 1px #00bcd4;
+    position: fixed;
+    top:-15%;
+    z-index: 1;
+    cursor: default;
+    animation-name: snowflake-fall, snowflake-move;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
 }
