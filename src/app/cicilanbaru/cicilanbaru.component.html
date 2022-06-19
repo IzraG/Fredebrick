@@ -50,6 +50,9 @@
             </div>
         </div>
         <table>
+            <tr>
+                <th *ngFor="let header of Headers">{{header}}</th>
+            </tr>
             <tr *ngFor="let a of SkemaCicilan.ListAngsuran">
                 <td>
                     {{a.InstallmentAmount}}
@@ -66,4 +69,5 @@
             </tr>
         </table>
     </div>
+    <!-- <app-video-call></app-video-call> -->
 </div>
