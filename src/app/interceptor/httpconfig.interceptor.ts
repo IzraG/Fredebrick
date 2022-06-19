@@ -15,6 +15,7 @@ export class HttpconfigInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log(request);
     request = request.clone({ headers: request.headers.set('Accept', 'application/json') });
+    request = request.clone({ headers: request.headers.set('Content-Type', 'application/json') });
     request = request.clone({ headers: request.headers.set('Authorization', 'Bearer access-production-e3a8a654-29d9-11ec-9621-0242ac130002') });
 
     return next.handle(request);

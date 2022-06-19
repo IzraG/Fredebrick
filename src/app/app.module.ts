@@ -6,9 +6,9 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LihatCicilanComponent } from './lihat-cicilan/lihat-cicilan.component';
 import { CicilanbaruComponent } from './cicilanbaru/cicilanbaru.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpconfigInterceptor } from './interceptor/httpconfig.interceptor';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -23,7 +23,11 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,   
+    HttpClientModule,
+    FormsModule
+
+
 
   ],
   providers: [

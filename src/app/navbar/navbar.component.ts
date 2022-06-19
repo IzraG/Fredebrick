@@ -9,6 +9,7 @@ export class NavbarComponent implements OnInit {
 
   @Input('CurrentPage') CurrentPage?:string;
   @Output('NavigatePage') NavigatePage = new EventEmitter<string>();
+  @Output('LoginPage') LoginPage = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
@@ -16,5 +17,8 @@ export class NavbarComponent implements OnInit {
 
   onClick(action:string){
     this.NavigatePage.emit("action")
+  }
+  onLogin(){
+    this.LoginPage.emit("login")
   }
 }

@@ -1,5 +1,6 @@
 <app-navbar [CurrentPage]="currentPage"
-(Back)="back()"></app-navbar>
+(Back)="back()"
+(LoginPage)="changePage('login')"></app-navbar>
 <div class="main" *ngIf="currentPage=='mainMenu'">
     <div class="container">
         <div class="title">
@@ -22,3 +23,6 @@
 <app-cicilanbaru *ngIf="currentPage=='cicilanBaru'">
 
 </app-cicilanbaru>
+<app-login *ngIf="currentPage=='login'"
+(NavigatePage)="changePage('dashboard')"></app-login>
+<app-dashboard *ngIf="currentPage=='dashboard'" ></app-dashboard>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  @Output('NavigatePage') NavigatePage = new EventEmitter<string>();
   FormGroup: FormGroup = this.fb.group({
     username:['',Validators.required],
     password:['',Validators.required]
@@ -19,4 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  Login(){
+    this.NavigatePage.emit("dashboard")
+  }
 }
