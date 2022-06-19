@@ -1,80 +1,84 @@
-<div class="container-fluid">
-    <form class="form form-horizontal" (ngSubmit)="FormGroup.valid && SaveForm()" [formGroup]="FormGroup" (FormGroup)="FormGroup">
-        <div class="container-fluid ">
-            <div class="row d-flex justify-content-center">
-                <div class="col-2 ">
-                    <h3>Aset: </h3>
+<body>
+    <div class="container-fluid">
+        <h2 class="title"><b>Cicilan Anda</b></h2>
+        <form class="form form-horizontal" (ngSubmit)="FormGroup.valid && SaveForm()" [formGroup]="FormGroup" (FormGroup)="FormGroup">
+            <div class="container-fluid upper">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-2 ">
+                        <h3>Aset: </h3>
+                    </div>
+                    <div class="col-2">
+                        <input type="text" name="Aset" class="form-control" formControlName="Aset">
+                    </div>
                 </div>
-                <div class="col-2">
-                    <input type="text" name="Aset" class="form-control" formControlName="Aset">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-2">
+                        <h3>Harga: </h3>
+                    </div>
+                    <div class="col-2">
+                        <input type="text" name="Aset" class="form-control" formControlName="Harga">
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-2">
+                        <h3>DP: </h3>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" name="Aset" class="form-control" formControlName="DP">
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-2">
+                        <h3>Bunga: </h3>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" name="Bunga" class="form-control" formControlName="Bunga">
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <button type="submit" class="w-25 btn">
+                      Submit
+                    </button>
                 </div>
             </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-2">
-                    <h3>Harga: </h3>
-                </div>
-                <div class="col-2">
-                    <input type="text" name="Aset" class="form-control" formControlName="Harga">
-                </div>
+        </form>
+        <div class="dataCicilan" *ngIf="viewDataCicilan">
+            <div class="container row dataUpper">
+                <h4>
+                    Cicilan Per Bulan: Rp. {{(SkemaCicilan.ListAngsuran[0].InstallmentAmount).toLocaleString('en-us', {minimumFractionDigits: 2})}}
+                </h4>
+                <h4>
+                    Jumlah Cicilan: {{SkemaCicilan.Tenor}} Bulan / {{SkemaCicilan.Tenor/12}} Tahun
+                </h4>
             </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-2">
-                    <h3>DP: </h3>
-                </div>
-                <div class="col-2">
-                    <input type="number" name="Aset" class="form-control" formControlName="DP">
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-2">
-                    <h3>Bunga: </h3>
-                </div>
-                <div class="col-2">
-                    <input type="number" name="Bunga" class="form-control" formControlName="Bunga">
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <button type="submit" class="w-25 btn-light btn">
-                  Submit
-                </button>
-            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="num">#</th>
+                        <th *ngFor="let header of Headers">{{header}}</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr *ngFor="let a of SkemaCicilan.ListAngsuran, let i = index">
+                        <td class="num">{{i+1}}</td>
+                        <td>
+                            Rp{{(a.InstallmentAmount).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
+                        </td>
+                        <td>
+                            Rp{{(a.Pokok).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
+                        </td>
+                        <td>
+                            Rp{{(a.Bunga).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
+                        </td>
+                        <td>
+                            Rp{{(a.SisaPokok).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </form>
-    <div class="dataCicilan container" *ngIf="viewDataCicilan">
-        <div class="container row">
-            <div>
-                Cicilan Per Bulan: Rp. {{(SkemaCicilan.ListAngsuran[0].InstallmentAmount).toLocaleString('en-us', {minimumFractionDigits: 2})}}
-            </div>
-            <div>
-                Jumlah Cicilan: {{SkemaCicilan.Tenor}} Bulan / {{SkemaCicilan.Tenor/12}} Tahun
-            </div>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th class="num">#</th>
-                    <th *ngFor="let header of Headers">{{header}}</th>
-                </tr>
-            </thead>
-            
-            <tbody>
-                <tr *ngFor="let a of SkemaCicilan.ListAngsuran, let i = index">
-                    <td class="num">{{i+1}}</td>
-                    <td>
-                        Rp{{(a.InstallmentAmount).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
-                    </td>
-                    <td>
-                        Rp{{(a.Pokok).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
-                    </td>
-                    <td>
-                        Rp{{(a.Bunga).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
-                    </td>
-                    <td>
-                        Rp{{(a.SisaPokok).toLocaleString('en-us', {maximumFractionDigits:0})}}.00
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <app-vid-call></app-vid-call>
     </div>
-    <app-vid-call></app-vid-call>
-</div>
+    
+</body>

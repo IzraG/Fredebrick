@@ -1,4 +1,18 @@
 $borderRadius: .2em;
+$gradient: .2;
+body{
+    background-image: linear-gradient( rgba(0, 0, 0, $gradient), rgba(0, 0, 0, $gradient)), url('/assets/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    background-color: #06283D;
+    z-index: 2;
+}
+
+.upper{
+    color: #DFF6FF;
+}
 table{
     display: flex;
     flex-direction: column;
@@ -9,14 +23,61 @@ table{
     border-radius: $borderRadius;
     margin-top: 50px;
 }
+.container-fluid{
+    padding-top: 100px;
+}
+.title {
+    text-align: center;
+    color: #DFF6FF;
+}
+
+button{
+    margin: 50px 0px;
+    background-color: #DFF6FF;
+}
+
+.dataCicilan{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+.trheader{
+    color: #06283D;
+    background-color: white;
+    border-radius: $borderRadius $borderRadius 0% 0%;
+}
 
 th{
     display: flex;
     justify-content: space-evenly;
-    width: 30%;
+    width: 20%;
 }
+
+.num{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+}
+
 
 tr{
     display: flex;
     justify-content: space-evenly;
+}
+
+td{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    width: 30%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 15%;
+    margin-bottom: 70px;
 }

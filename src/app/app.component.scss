@@ -3,12 +3,3 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-$gradient: .2;
-body {
-    background-image: linear-gradient( rgba(0, 0, 0, $gradient), rgba(0, 0, 0, $gradient)), url('/assets/background.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    width: 100vw;
-    height: 100vh;
-}
